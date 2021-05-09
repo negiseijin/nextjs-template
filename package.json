@@ -54,10 +54,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": [
-        "lint-staged",
-        "git-format-staged -f 'prettier --ignore-unknown --stdin --stdin-filepath \"{}\"' ."
-      ],
+      "pre-commit": "lint-staged",
       "pre-push": "yarn run type-check"
     }
   }
