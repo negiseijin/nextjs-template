@@ -1,16 +1,15 @@
-import { GetStaticProps, GetStaticPaths } from 'next'
-
-import { User } from '../../interfaces'
-import { sampleUserData } from '../../utils/sample-data'
-import Layout from '../../components/Layout'
-import ListDetail from '../../components/ListDetail'
+import { GetStaticProps, GetStaticPaths, NextPage } from 'next'
+import Layout from '@/components/Layout'
+import ListDetail from '@/components/ListDetail'
+import { User } from '@/interfaces/index'
+import { sampleUserData } from '@/utils/sample-data'
 
 type Props = {
   item?: User
   errors?: string
 }
 
-const StaticPropsDetail = ({ item, errors }: Props) => {
+const StaticPropsDetail: NextPage<Props> = ({ item, errors }) => {
   if (errors) {
     return (
       <Layout title="Error | Next.js + TypeScript Example">
